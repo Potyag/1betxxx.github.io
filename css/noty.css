@@ -1,0 +1,119 @@
+ul.noty_container {
+	position: fixed;
+	z-index: 9999999;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	width: 400px;
+	top: 100px;
+}
+ul.noty_container li {
+	position: relative;
+	float: left;
+	clear: both;
+	list-style: none;
+	padding: 0px;
+	margin: 10px 0 0 0;
+}
+ul.noty_container.topLeft {
+	left: 20px;
+}
+ul.noty_container.topRight {
+	right: 40px;
+}
+ul.noty_container.topRight li {
+	float: right;
+}
+
+/* Fix for: http://bugs.jquery.com/ticket/2278 */
+ul.noty_container.topLeft li, ul.noty_container.topRight li {
+	width: 400px;
+}
+
+div.noty_modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	z-index: 10000;
+	opacity: 0.6;
+	display: none;
+}
+
+.noty_bar {
+	position: fixed;
+	display: none;
+	background: #013d79!important;
+	color:#fff;
+}
+
+.noty_bar.top {
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 3px solid #eee;
+}
+.noty_bar.bottom {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-top: 3px solid #eee;
+}
+.noty_bar.center {
+	top: 40%;
+	left: 19.5%;
+	width: 60%;
+	padding: 4px;
+	border-radius: 3px;
+}
+.noty_bar.topLeft, .noty_bar.topRight {
+	width: 100%;
+	clear:both;
+	position: relative;
+	padding: 4px;
+	border-radius: 3px;
+}
+.noty_bar .noty_message {
+	padding: 10px 30px 10px 10px;
+	font-weight: bold;
+	font-size: 13px;
+	width: 96%;
+}
+
+.noty_bar .noty_message .noty_buttons {
+	float: right;
+	font-size: 13px;
+	margin-top: -6px;
+	margin-left: -25px;
+}
+
+.noty_bar .noty_message .noty_buttons button {
+	margin-left: 5px;
+}
+
+.noty_bar .noty_close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-image: url(../img/closelabel.png);
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.noty_bar.alert {
+	background-color: #fff;
+	border-color: #7c5e26;
+}
+
+.noty_bar.error {
+	background-color: red;
+	color: #fff;
+	border-color: darkred;
+}
+
+.noty_bar.success {
+	background-color: lightgreen;
+	color: darkgreen;
+	border-color: darkgreen;
+}

@@ -1,0 +1,392 @@
+Uri: https://1bet.pro/?p=129862
+File Name: c:\Downloaded Web Sites\1bet.pro\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/img/favicon.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\favicon.png
+Content Type: image/png
+
+Uri: https://1bet.pro/css/jquery.modal.min.css?729
+File Name: c:\Downloaded Web Sites\1bet.pro\css\jquery.modal.min.css
+Content Type: text/css
+
+Uri: https://1bet.pro/css/swiper.min.css?729
+File Name: c:\Downloaded Web Sites\1bet.pro\css\swiper.min.css
+Content Type: text/css
+
+Uri: https://1bet.pro/css/noty.css?729
+File Name: c:\Downloaded Web Sites\1bet.pro\css\noty.css
+Content Type: text/css
+
+Uri: https://1bet.pro/css/intlTelInput.min.css?729
+File Name: c:\Downloaded Web Sites\1bet.pro\css\intlTelInput.min.css
+Content Type: text/css
+
+Uri: https://1bet.pro/css/style.css?729
+File Name: c:\Downloaded Web Sites\1bet.pro\css\style.css
+Content Type: text/css
+
+Uri: https://1bet.pro/article/polzovatelskoe_soglashenie
+File Name: c:\Downloaded Web Sites\1bet.pro\article\polzovatelskoe_soglashenie.html
+Content Type: text/html
+
+Uri: https://1bet.pro/
+File Name: c:\Downloaded Web Sites\1bet.pro\index-1.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/line/
+File Name: c:\Downloaded Web Sites\1bet.pro\line\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/live/
+File Name: c:\Downloaded Web Sites\1bet.pro\live\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/results/
+File Name: c:\Downloaded Web Sites\1bet.pro\results\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/betsearch/
+File Name: c:\Downloaded Web Sites\1bet.pro\betsearch\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/article/politika_konfidencialnosti
+File Name: c:\Downloaded Web Sites\1bet.pro\article\politika_konfidencialnosti.html
+Content Type: text/html
+
+Uri: https://1bet.pro/article/kontakti
+File Name: c:\Downloaded Web Sites\1bet.pro\article\kontakti.html
+Content Type: text/html
+
+Uri: https://1bet.pro/article/otvetstvennaya_igra_
+File Name: c:\Downloaded Web Sites\1bet.pro\article\otvetstvennaya_igra_.html
+Content Type: text/html
+
+Uri: https://1bet.pro/article/faq
+File Name: c:\Downloaded Web Sites\1bet.pro\article\faq.html
+Content Type: text/html
+
+Uri: https://1bet.pro/article/18_
+File Name: c:\Downloaded Web Sites\1bet.pro\article\18_.html
+Content Type: text/html
+
+Uri: https://1bet.pro/line/bet_fytbol/
+File Name: c:\Downloaded Web Sites\1bet.pro\line\bet_fytbol\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/line/bet_nastolnii_tennis/
+File Name: c:\Downloaded Web Sites\1bet.pro\line\bet_nastolnii_tennis\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/line/bet_regbi/
+File Name: c:\Downloaded Web Sites\1bet.pro\line\bet_regbi\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/line/bet_fytzal/
+File Name: c:\Downloaded Web Sites\1bet.pro\line\bet_fytzal\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/line/bet_amerik__fytbol/
+File Name: c:\Downloaded Web Sites\1bet.pro\line\bet_amerik__fytbol\index.htm
+Content Type: text/html
+
+Uri: https://1bet.pro/js/jquery.min.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/js/cookie.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\cookie.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/js/jquery.noty.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\jquery.noty.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/js/jquery.modal.min.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\jquery.modal.min.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/js/jquery.carouFredSel-6.2.1-packed.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\jquery.carouFredSel-6.2.1-packed.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/js/intlTelInput.min.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\intlTelInput.min.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/js/jquery.nicescroll.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\jquery.nicescroll.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/js/main.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\main.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/img/preloader.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\preloader.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/logo.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\logo.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/burger1.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\burger1.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/closeWhite.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\closeWhite.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/rekmat/banner-1579979336.jpg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1579979336.jpg
+Content Type: image/jpeg
+
+Uri: https://1bet.pro/img/rekmat/banner-1579979532.jpg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1579979532.jpg
+Content Type: image/jpeg
+
+Uri: https://1bet.pro/img/rekmat/banner-1579979331.jpg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1579979331.jpg
+Content Type: image/jpeg
+
+Uri: https://1bet.pro/img/rekmat/banner-1579979326.jpg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1579979326.jpg
+Content Type: image/jpeg
+
+Uri: https://1bet.pro/img/rekmat/banner-1579977384.jpg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1579977384.jpg
+Content Type: image/jpeg
+
+Uri: https://1bet.pro/img/rekmat/banner-1581449947.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1581449947.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/rekmat/banner-1577313924.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1577313924.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/rekmat/banner-1577300366.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1577300366.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/rekmat/banner-1577300354.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1577300354.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/rekmat/banner-1577300393.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1577300393.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/rekmat/banner-1577300378.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1577300378.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/rekmat/banner-1577300388.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\rekmat\banner-1577300388.png
+Content Type: image/png
+
+Uri: https://1bet.pro/js/swiper.min.js
+File Name: c:\Downloaded Web Sites\1bet.pro\js\swiper.min.js
+Content Type: application/javascript
+
+Uri: https://1bet.pro/img/closelabel.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\closelabel.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/flags.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\flags.png
+Content Type: image/png
+
+Uri: https://1bet.pro/fonts/DRUK-WIDE-CYR-BOLD.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\DRUK-WIDE-CYR-BOLD.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/DRUK-WIDE-CYR-BOLD-ITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\DRUK-WIDE-CYR-BOLD-ITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/DRUK-WIDE-CYR-HEAVY.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\DRUK-WIDE-CYR-HEAVY.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/DRUK-WIDE-CYR-HEAVY-ITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\DRUK-WIDE-CYR-HEAVY-ITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/DRUK-WIDE-CYR-MEDIUM.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\DRUK-WIDE-CYR-MEDIUM.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/DRUK-WIDE-CYR-MEDIUM-ITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\DRUK-WIDE-CYR-MEDIUM-ITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-BOLD.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-BOLD.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-BOLDITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-BOLDITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-EXTRALIGHT.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-EXTRALIGHT.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-EXTRALIGHTITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-EXTRALIGHTITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-ITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-ITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-LIGHT.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-LIGHT.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-LIGHTITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-LIGHTITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-MEDIUM.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-MEDIUM.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-MEDIUMITALIC.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-MEDIUMITALIC.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-REGULAR.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-REGULAR.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/fonts/STEM-THIN.OTF
+File Name: c:\Downloaded Web Sites\1bet.pro\fonts\STEM-THIN.bin
+Content Type: application/octet-stream
+
+Uri: https://1bet.pro/img/zamocInKupon2.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\zamocInKupon2.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/arrowRight.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\arrowRight.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/leagOpen.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\leagOpen.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/leagClose.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\leagClose.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/gamePlay.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\gamePlay.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/start.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\start.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/new.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\new.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/popular.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\popular.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/logoWoter.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\logoWoter.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/strSportWhite.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\strSportWhite.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/header_pod.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\header_pod.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/play.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\play.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/next.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\next.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/strAkkWhite.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\strAkkWhite.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/loading.gif
+File Name: c:\Downloaded Web Sites\1bet.pro\img\loading.gif
+Content Type: image/gif
+
+Uri: https://1bet.pro/img/bullets.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\bullets.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/arrows.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\arrows.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/strtimes.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\strtimes.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/animation2.svg
+File Name: c:\Downloaded Web Sites\1bet.pro\img\animation2.svg
+Content Type: image/svg+xml
+
+Uri: https://1bet.pro/img/preStatSpanTime.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\preStatSpanTime.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/preStatSpanTimeZone.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\preStatSpanTimeZone.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/block.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\block.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/closeItem.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\closeItem.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/statusBet0.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\statusBet0.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/statusBet1.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\statusBet1.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/statusBet2.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\statusBet2.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/statusBet3.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\statusBet3.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/liveindic.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\liveindic.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/close.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\close.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/searchLEnt.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\searchLEnt.png
+Content Type: image/png
+
+Uri: https://1bet.pro/img/passport.png
+File Name: c:\Downloaded Web Sites\1bet.pro\img\passport.png
+Content Type: image/png
+

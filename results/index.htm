@@ -1,0 +1,698 @@
+﻿<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="..\img\favicon.png" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="..\css\jquery.modal.min.css?729">
+	<link rel="stylesheet" href="..\css\swiper.min.css?729">
+	<link rel="stylesheet" href="..\css\noty.css?729">
+	<link rel="stylesheet" href="..\css\intlTelInput.min.css?729">
+	<link rel="stylesheet" href="..\css\style.css?729">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<script type="text/javascript" src="..\js\jquery.min.js"></script>
+	<script type="text/javascript" src="..\js\cookie.js"></script>
+	<script type="text/javascript" src="..\js\jquery.noty.js"></script>
+	<script type="text/javascript" src="..\js\jquery.modal.min.js"></script>
+	<script type="text/javascript" src="..\js\intlTelInput.min.js"></script>
+	<script type="text/javascript" src="..\js\jquery.nicescroll.js"></script>
+	<script type="text/javascript" src="..\js\main.js"></script>
+	<title>1bet.pro - Букмекерская компания</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+</head>
+<body>
+
+    <div class="page-wrapper">
+    
+
+<div class="backSideMobileMenus"></div>
+
+
+<div id="preloader">
+  <img src="..\img\preloader.svg">
+</div>
+
+
+	<div id="reg" class="modal">
+	  <form method="post" class="modalform" id="regForm">
+		<h3>Регистрация</h3>
+		
+		<div class="regMsg formUsMsg"></div>
+		
+		<input type="text" name="fio" placeholder="Фамилия Имя" required="">
+		
+					<input type="hidden" name="tel" id="full_number">
+			<div class="phonePluginReg">
+				<input type="text" name="tel_show" id="phonelib" style="width:100%;" required="">
+			</div>
+				
+				
+						<div class="select" style="width: 100%; margin-bottom:7px;">
+					<select name="curr" style="margin-bottom:0px;">
+												<option value=" KGS"> KGS</option>
+													<option value="USD">USD</option>
+													<option value="EUR">EUR</option>
+													<option value="RUB">RUB</option>
+													<option value="UAH" selected="">UAH</option>
+													<option value="UZS">UZS</option>
+													<option value="TJS">TJS</option>
+													<option value="AFN">AFN</option>
+													<option value="KZT">KZT</option>
+													<option value="GEL">GEL</option>
+													<option value="THB">THB</option>
+													<option value="GBP">GBP</option>
+													<option value="AMD">AMD</option>
+													<option value="AZN">AZN</option>
+													<option value="MDL">MDL</option>
+													<option value="CNY">CNY</option>
+													<option value="CRC">CRC</option>
+													<option value="CZK">CZK</option>
+													<option value="RSD">RSD</option>
+													<option value="SEK">SEK</option>
+											</select>
+				</div>
+						
+		<input type="email" name="email" placeholder="Email" required="">
+				<input type="password" name="pass" id="reg-password" placeholder="Пароль" required="">
+		<input type="password" name="pass2" id="reg-confirm-password" placeholder="Повторите пароль" required="">
+		
+				<div class="regRules">
+			<div>
+				<input name="rules" value="1" type="checkbox" class="checkbox" id="checkbox" required="">
+				<label for="checkbox"></label>
+			</div>
+			<div>
+				Принимаю <a href="..\article\polzovatelskoe_soglashenie.html">условия использования</a>
+			</div>
+		</div>
+		<div style="clear:both; height:10px;"></div>
+		
+		
+		<button type="submit">Регистрация</button>
+		<a href="#forgot" rel="modal:open">Забыли пароль</a>
+	  </form>
+		
+					<script>
+				var input = document.querySelector("#phonelib");
+				
+				var iti = window.intlTelInput(input, {
+				  dropdownContainer: document.body,
+				  formatOnDisplay: true,
+				  initialCountry: "UA",
+				  nationalMode: false,
+				  preferredCountries: ['RU', 'UA', 'UZ', 'TJ'],
+				  utilsScript: "/js/utils.js",
+				});
+				
+				$(input).keyup(function() {
+					var value = input.value; 
+					var rep = /[\/\\\.;*":'a-zA-Zа-яА-Я]/; 
+					if (rep.test(value)) { 
+						value = value.replace(rep, ''); 
+						input.value = value; 
+					}
+					
+					$('#full_number').val(iti.getNumber(intlTelInputUtils.numberFormat.INTERNATIONAL));
+				});
+				
+				
+				$("#regForm").submit(function(event) {
+					event.preventDefault();
+					
+					var errorInvalid = "Неправильный номер";
+					var errorCountryCode = "Неправильный код страны у номера телефона";
+					var errorShort = "Неправильный номер. Слишком мало символов";
+					var errorLong = "Неправильный номер. Слишком много символов";
+					var errorForm = "Неправильный номер. Номер должен начинаться с кода страны (+...)";
+					var errorMap = [errorInvalid, errorCountryCode, errorShort, errorLong, errorInvalid, errorForm];
+
+					if (input.value.trim()) {
+						if (iti.isValidNumber()) {
+							$.ajax({
+								type: "POST",
+								url:"/person/reg.php",
+								data: $('#regForm').serialize(),
+								success: function(result){
+									let res;
+									res = JSON.parse(result);
+
+									if(res['error'] != '' && res['error'] != null){$(".regMsg").html('<div style="background: #f82516; padding:7px 5px;">' + res['error'] + '</div>');}
+									if(res['success'] != ''){$(".regMsg").html('<div style="background: #2e8e2a; padding:7px 5px;">' + res['success'] + '</div>');}
+									if(res['controller'] != ''){setTimeout(function(){document.location.href = res['controller'];}, 3000);}
+								}
+							});
+						} else {
+							var errorCode = iti.getValidationError();
+							input.classList.add("error");
+							$(".regMsg").html('<div style="background: #f82516; padding:7px 5px;">' + errorMap[errorCode] + '</div>');
+						}
+					}
+				});
+			</script>
+			</div>
+
+	
+	<div id="forgot" class="modal">
+	  <form method="post" class="modalform" id="recoverForm">
+		<h3>Восстановление пароля</h3>
+		
+		<div class="recoverMsg formUsMsg"></div>
+		
+		<input type="email" name="email" id="recover-email" placeholder="Email" required="">
+		<button type="submit">Восстановить пароль</button>
+		<a href="#login" rel="modal:open">Вход</a>
+		<a href="#reg" rel="modal:open">Регистрация</a>
+	  </form>
+	  
+	  <script>
+		$("#recoverForm").submit(function(event) {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url:"/person/sendpass.php",
+				data: $('#recoverForm').serialize(),
+				success: function(result){
+					let res;
+					res = JSON.parse(result);
+					
+					if(res['error'] != '' && res['error'] != null){$(".recoverMsg").html('<div style="background: #f82516; padding:7px 5px;">' + res['error'] + '</div>');}
+					if(res['success'] != ''){$(".recoverMsg").html('<div style="background: #2e8e2a; padding:7px 5px;">' + res['success'] + '</div>');}
+				}
+			});
+		});
+		</script>
+	</div>
+
+	
+	<div id="login" class="modal">
+	  <form method="post" class="modalform" id="loginForm">
+		<h3>Вход</h3>
+		
+				
+		
+		<div class="loginMsg formUsMsg"></div>
+		
+		<input type="email" name="emailauth" id="login-email" placeholder="Email" required="">
+		<input type="password" name="passauth" id="login-password" placeholder="Пароль" required="">
+		<button type="submit">Войти</button>
+		<a href="#reg" rel="modal:open">Регистрация</a>
+		<a href="#forgot" rel="modal:open">Забыли пароль</a>
+	  </form>
+	  
+	  <script>
+		$("#loginForm").submit(function(event) {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url:"/person/login.php",
+				data: $('#loginForm').serialize(),
+				success: function(result){
+					let res;
+					res = JSON.parse(result);
+					
+					if(res['error'] != '' && res['error'] != null){$(".loginMsg").html('<div style="background: #f82516; padding:7px 5px;">' + res['error'] + '</div>');}
+					if(res['success'] != ''){$(".loginMsg").html('<div style="background: #2e8e2a; padding:7px 5px;">' + res['success'] + '</div>');}
+					if(res['controller'] != ''){document.location.href = res['controller'];}
+				}
+			});
+		});
+		</script>
+	</div>
+
+
+
+
+<header class="page-header">
+
+<div class="desktopOnly">
+	<nav class="main-menu">
+		<div class="dopMenuWrap">
+			<ul class="site-nav">
+				<li class="logoWidth">
+				<a href="..\index-1.htm"><img src="..\img\logo.png"></a>
+				</li>
+				<li class="desktopOnly navDeskMenu">
+					<div class="topMenuDesk">
+						<a href="..\line\index.htm" class="">Линия</a>
+						<a href="..\live\index.htm" class="">Лайв</a>
+						<a href="index.htm" class="selected-menu-item">Результаты</a>
+						<a href="..\betsearch\index.htm" class="">Проверить купон</a>
+					</div>
+				</li>
+									<li>
+						<div class="time-dropdown">
+						<div class="user-time-block">
+							
+							<div class="langFlexUp">
+								<div>23.04.20, 23:18</div>
+							</div>
+
+							<div class="dropdown time-dropdown-style">
+																		<a href="index.htm" onclick="setCookie('timezone', 'America/New_York', {expires: 31536000, path: '/'});" class="">
+											America/New_York										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Asia/Baku', {expires: 31536000, path: '/'});" class="">
+											Asia/Baku										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Asia/Bangkok', {expires: 31536000, path: '/'});" class="">
+											Asia/Bangkok										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Asia/Bishkek', {expires: 31536000, path: '/'});" class="">
+											Asia/Bishkek										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Asia/Magadan', {expires: 31536000, path: '/'});" class="">
+											Asia/Magadan										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Asia/Omsk', {expires: 31536000, path: '/'});" class="">
+											Asia/Omsk										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Asia/Tbilisi', {expires: 31536000, path: '/'});" class="">
+											Asia/Tbilisi										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Asia/Vladivostok', {expires: 31536000, path: '/'});" class="">
+											Asia/Vladivostok										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Amsterdam', {expires: 31536000, path: '/'});" class="">
+											Europe/Amsterdam										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Berlin', {expires: 31536000, path: '/'});" class="">
+											Europe/Berlin										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Budapest', {expires: 31536000, path: '/'});" class="">
+											Europe/Budapest										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Istanbul', {expires: 31536000, path: '/'});" class="">
+											Europe/Istanbul										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Kaliningrad', {expires: 31536000, path: '/'});" class="">
+											Europe/Kaliningrad										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Kiev', {expires: 31536000, path: '/'});" class="timeZoneAct">
+											Europe/Kiev										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Kirov', {expires: 31536000, path: '/'});" class="">
+											Europe/Kirov										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Lisbon', {expires: 31536000, path: '/'});" class="">
+											Europe/Lisbon										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Minsk', {expires: 31536000, path: '/'});" class="">
+											Europe/Minsk										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Moscow', {expires: 31536000, path: '/'});" class="">
+											Europe/Moscow										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Oslo', {expires: 31536000, path: '/'});" class="">
+											Europe/Oslo										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Paris', {expires: 31536000, path: '/'});" class="">
+											Europe/Paris										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Samara', {expires: 31536000, path: '/'});" class="">
+											Europe/Samara										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Saratov', {expires: 31536000, path: '/'});" class="">
+											Europe/Saratov										</a>
+																			<a href="index.htm" onclick="setCookie('timezone', 'Europe/Tiraspol', {expires: 31536000, path: '/'});" class="">
+											Europe/Tiraspol										</a>
+																</div>
+						</div>
+						</div>
+
+						<div id="changetime" class="modal">
+																<a href="index.htm" onclick="setCookie('timezone', 'America/New_York', {expires: 31536000, path: '/'});" class="propsModal ">
+										America/New_York									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Asia/Baku', {expires: 31536000, path: '/'});" class="propsModal ">
+										Asia/Baku									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Asia/Bangkok', {expires: 31536000, path: '/'});" class="propsModal ">
+										Asia/Bangkok									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Asia/Bishkek', {expires: 31536000, path: '/'});" class="propsModal ">
+										Asia/Bishkek									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Asia/Magadan', {expires: 31536000, path: '/'});" class="propsModal ">
+										Asia/Magadan									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Asia/Omsk', {expires: 31536000, path: '/'});" class="propsModal ">
+										Asia/Omsk									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Asia/Tbilisi', {expires: 31536000, path: '/'});" class="propsModal ">
+										Asia/Tbilisi									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Asia/Vladivostok', {expires: 31536000, path: '/'});" class="propsModal ">
+										Asia/Vladivostok									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Amsterdam', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Amsterdam									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Berlin', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Berlin									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Budapest', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Budapest									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Istanbul', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Istanbul									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Kaliningrad', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Kaliningrad									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Kiev', {expires: 31536000, path: '/'});" class="propsModal timeZoneAct">
+										Europe/Kiev									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Kirov', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Kirov									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Lisbon', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Lisbon									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Minsk', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Minsk									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Moscow', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Moscow									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Oslo', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Oslo									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Paris', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Paris									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Samara', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Samara									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Saratov', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Saratov									</a>
+																	<a href="index.htm" onclick="setCookie('timezone', 'Europe/Tiraspol', {expires: 31536000, path: '/'});" class="propsModal ">
+										Europe/Tiraspol									</a>
+														</div>
+					</li>
+												<li>
+					<div style="display:flex; height:100%; justify-content: center; align-items:center;">
+						<a href="#reg" rel="modal:open" class="regNew">Регистрация</a>
+						<a href="#login" rel="modal:open" class="authNew">Вход</a>
+					</div>
+				</li>
+							</ul>
+		</div>
+	</nav>
+</div>
+
+
+
+<div class="mobOnly">
+	<nav class="main-menu">
+	<ul class="site-nav">
+		<li class="open_mobile_sport_menu" id="left-toggle">
+			<img src="..\img\burger1.png">
+		</li>
+		<li class="li_logo_mobile">
+			<a href="..\index-1.htm"><img src="..\img\logo.png"></a>
+		</li>
+				<li class="open_mobile_accaunt_menu" id="right-toggle">
+			<i class="fas fa-user"></i>
+		</li>
+	</ul>
+	</nav>
+</div>
+
+</header>
+
+
+
+<section class="user-menu-mobile">
+
+<div class="mobOnly">
+	<div class="close-menu-top">
+		<div id="right-close"><img src="..\img\closeWhite.svg"></div>
+		<div><a href="..\index-1.htm"><img src="..\img\logo.png"></a></div>
+	</div>
+</div>
+
+<div class="right-menu-scroller">
+
+	<div class="user-menu-info">
+					<a class="btn btn-red" href="#login" rel="modal:open">Вход</a>
+			<a class="btn btn-red" href="#reg" rel="modal:open">Регистрация</a>
+			</div>
+	<div class="user-main-menu">
+	  <a href="..\line\index.htm">Линия</a>
+	  <a href="..\live\index.htm">Лайв</a>
+	  <a href="#search" rel="modal:open">Найти событие</a>
+	  <a href="index.htm">Результаты</a>
+	  <a href="..\betsearch\index.htm">Проверить купон</a>
+
+	  
+	  	  <a href="#changetime" rel="modal:open">23.04.2020, 23:18</a>
+	  
+		<a href="..\article\politika_konfidencialnosti.html">Политика конфиденциальности</a><a href="..\article\kontakti.html">Контакты</a><a href="..\article\otvetstvennaya_igra_.html">Ответственная игра </a><a href="..\article\faq.html">FAQ</a><a href="..\article\18_.html">18+</a><a href="..\article\polzovatelskoe_soglashenie.html">Пользовательское соглашение</a>	</div>
+
+	<div style="height:20px;"></div>
+	<div class="supportBlockUserMenu">
+		<div>Служба поддержки <span>24/7</span></div>
+		<div>8 (800) 100 10 10</div>
+		<div>melbetlive@gmail.com</div>
+	</div>
+	<div style="height:15px;"></div>
+
+</div>
+</section>
+
+
+
+
+<div id="search" class="modal" style="max-width: 650px;">
+	<h3>Поиск событий и лиг</h3>
+	<div style="height:10px;"></div>
+	
+	<div class="searchBlock">
+		<input name="search" id="searchInp" placeholder="Введите событие или лигу">
+		<a href="javascript: void(0)" id="searchLink">Поиск</a>
+	</div>
+	<div id="searchResult"></div>
+	<script>
+	$("#searchLink").on("click", function(){
+		search();
+	});
+	
+	function search(){
+		var search = document.getElementById("searchInp").value;
+		$.ajax({
+			type: "POST",
+			url:"/integration/search.php", // Адрес обработчика
+			data: "search=" + search,
+			beforeSend: function() {$("#searchResult").html("<div class='loadinEvent2'></div>");},
+			success: function(result){$("#searchResult").html(result);}
+		});
+	}
+	search();
+	</script>
+</div>
+      <main class="page-container">
+        <section class="left-menu">
+	<div class="mobOnly">
+		<div class="close-menu-top">
+			<div id="left-close"><img src="..\img\closeWhite.svg"></div>
+			<div><a href="..\index-1.htm"><img src="..\img\logo.png"></a></div>
+		</div>
+	</div>
+
+	<div class="left-menu-scroller">
+
+		<div class="left-menuSports">
+			<div class="sportZag">Виды спорта</div>
+
+			<div class="filters" style="padding:0px 10px;">
+				<ul>
+					<li><a href="index.htm" onclick="setCookie('filter', '0', {expires: 3200, path: '/'});" class="filter-item filter-selected-item">Все</a></li>
+					<li>
+					<div class="filter-dropdown">
+						
+						 <a href="#" class="filter-item">По часам</a>						<div class="dropdown filter-dropdown-style">
+							<a href="index.htm" onclick="setCookie('filter', '48', {expires: 3200, path: '/'});" class="filter-item-hour">< 48 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '24', {expires: 3200, path: '/'});" class="filter-item-hour">< 24 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '12', {expires: 3200, path: '/'});" class="filter-item-hour">< 12 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '6', {expires: 3200, path: '/'});" class="filter-item-hour">< 6 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '5', {expires: 3200, path: '/'});" class="filter-item-hour">< 5 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '4', {expires: 3200, path: '/'});" class="filter-item-hour">< 4 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '3', {expires: 3200, path: '/'});" class="filter-item-hour">< 3 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '2', {expires: 3200, path: '/'});" class="filter-item-hour">< 2 ч</a> 
+							<a href="index.htm" onclick="setCookie('filter', '1', {expires: 3200, path: '/'});" class="filter-item-hour">< 1 ч</a>
+						</div>
+					</div>
+					</li>
+					<li>
+					<div class="filter-dropdown">
+						<a href="#" class="filter-item">По дням</a>						<div class="dropdown filter-dropdown-style">
+							<a href="index.htm" onclick="setCookie('filter', '23.04.2020', {expires: 3200, path: '/'});" class="filter-item-date">23.04.2020</a> 
+							<a href="index.htm" onclick="setCookie('filter', '24.04.2020', {expires: 3200, path: '/'});" class="filter-item-date">24.04.2020</a>
+							<a href="index.htm" onclick="setCookie('filter', '25.04.2020', {expires: 3200, path: '/'});" class="filter-item-date">25.04.2020</a>
+							<a href="index.htm" onclick="setCookie('filter', '26.04.2020', {expires: 3200, path: '/'});" class="filter-item-date">26.04.2020</a>
+							<a href="index.htm" onclick="setCookie('filter', '27.04.2020', {expires: 3200, path: '/'});" class="filter-item-date">27.04.2020</a>
+							<a href="index.htm" onclick="setCookie('filter', '28.04.2020', {expires: 3200, path: '/'});" class="filter-item-date">28.04.2020</a>
+							<a href="index.htm" onclick="setCookie('filter', '29.04.2020', {expires: 3200, path: '/'});" class="filter-item-date">29.04.2020</a>
+						</div>
+					</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="filter-menu-form">
+				<input type="text" name="filter-search" id="filter-search" placeholder="Поиск" required="" autocomplete="off">
+				<a href="#search" for="filter-search" class="linksearch"><i class="fas fa-search"></i></a>
+			</div>
+			<script>
+				$('#filter-search').keydown(function(event) {
+					if(event.keyCode == 13) {
+						$('.linksearch').click();
+					}
+				});
+				
+				$('.linksearch').click(function(event) {
+					event.preventDefault();
+					
+					if($('#filter-search').val() == ''){
+						//$('#filter-search').css('box-shadow','inset 0 -3px 0 #f82516');
+					}else{
+						//$('#filter-search').css('box-shadow','inset 0 -3px 0 #0d1b2a');
+						$('#search').modal();
+						$('#searchInp').val($('#filter-search').val());
+						$('#searchLink').click();
+					}
+
+				});
+			</script>
+
+		<div style="height:15px;"></div>
+
+		<ul class="left-menu-cats">
+								<li>
+						<a href="..\line\bet_fytbol\index.htm">
+							<span class="cat-name">Футбол</span>
+													</a>
+					</li>
+										<li>
+						<a href="..\line\bet_nastolnii_tennis\index.htm">
+							<span class="cat-name">Настольный теннис</span>
+													</a>
+					</li>
+										<li>
+						<a href="..\line\bet_regbi\index.htm">
+							<span class="cat-name">Регби</span>
+													</a>
+					</li>
+										<li>
+						<a href="..\line\bet_fytzal\index.htm">
+							<span class="cat-name">Футзал</span>
+													</a>
+					</li>
+										<li>
+						<a href="..\line\bet_amerik__fytbol\index.htm">
+							<span class="cat-name">Америк. футбол</span>
+													</a>
+					</li>
+							</ul>
+		
+				</div>
+	</div>
+</section>		
+        <div class="page-content">
+
+			
+			<div id="results-form">
+			<ul class="user-profile-menu">
+			<li>
+			  <div class="select">
+				<select name="sportid" id="selectFilter">
+									</select>
+			  </div>
+			</li>
+			<li>
+			  <div class="select">
+				<select name="sort" class="resFilInput" id="selectSort">
+					<option value="1">Сортировать по лигам</option>
+					<option value="2">Сортировать по дате</option>
+				</select>
+			  </div>
+			</li>
+			<li>
+			  <input name="date" type="date" value="2020-04-23" id="date">
+			</li>
+			<li>
+			  <button class="btn resFilSubmit">Показать</button>
+			</li>
+			</ul>
+			</div>
+
+
+
+
+			<div class="page-bodyResult"></div>
+			<script>
+			$("#selectFilter").change(function(){
+			  resultsget();
+			});
+			$("#date").change(function(){
+			  resultsget();
+			});
+			$("#selectSort").change(function(){
+			  resultsget();
+			});
+			$(".resFilSubmit").click(function(){
+			  resultsget();
+			});
+
+
+			function resultsget(){
+				// Вычисляем вид спорта
+				if($("#selectFilter").val() == ''){
+					var sport = 1;
+				}else{
+					var sport = $("#selectFilter").val();
+				}
+				// Вычисляем дату
+				if($("#date").val() == ''){
+					var dates = 2020-04-23;
+				}else{
+					var dates = $("#date").val();
+				}
+				// Вычисляем Сортировку
+				if($("#selectSort").val() == ''){
+					var sort = 1;
+				}else{
+					var sort = $("#selectSort").val();
+				}
+				
+				$.ajax({
+					type: "POST",
+					url:"/integration/lineresults.php", // Адрес обработчика
+					data: "sport="+sport+"&date="+dates+"&sort="+sort,
+					beforeSend: function() {$(".page-bodyResult").html("<div class='loadinEvent'></div>");},
+					success: function(result){$(".page-bodyResult").html(result);}
+				});
+			}
+			resultsget();
+			</script>
+
+        </div>
+      </main>
+	  
+	  
+    <footer class="page-footer">
+
+<div class="footerInfo">
+	<div class="footerArticle">
+		<a href="..\article\politika_konfidencialnosti.html">Политика конфиденциальности</a><a href="..\article\kontakti.html">Контакты</a><a href="..\article\otvetstvennaya_igra_.html">Ответственная игра </a><a href="..\article\faq.html">FAQ</a><a href="..\article\18_.html">18+</a><a href="..\article\polzovatelskoe_soglashenie.html">Пользовательское соглашение</a>	</div>
+	<div class="footerSoc">
+		<div class="footerSocFlex">
+				</div>
+
+		<a href="https://betengine.pro/" target="_blank" title="Разработка букмекерских контор, казино, игр" class="develop">
+			<img src="https://betengine.pro/img/logo-copyright-white.svg">
+			<div>Разработка сайта</div>
+		</a>
+	</div>
+</div>
+
+
+
+	<div class="foterBanners">
+		<div class="foterBannersFlex">
+			<a href="//showstreams.tv/"><img src="//www.free-kassa.ru/img/fk_btn/17.png" title="Бесплатный видеохостинг"></a>
+			<a href="/www.free-kassa.ru"><img src="..\img\rekmat\banner-1581449947.png"></a><a href="javascript:void(0);"><img src="..\img\rekmat\banner-1577313924.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300366.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300366.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300354.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300393.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300354.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300393.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300378.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300366.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300366.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300354.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300354.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300378.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300388.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300388.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300378.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300388.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300354.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300354.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300378.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300378.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300366.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300366.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300393.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300393.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300388.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300388.png"></a><a href="..\index-1.htm"><img src="..\img\rekmat\banner-1577300393.png"></a>		</div>
+	</div>
+
+
+<div class="copyright">
+		
+	<a href="..\index-1.htm">1bet.pro © 2020</a>
+	| <a href="mailto:melbetlive@gmail.com">melbetlive@gmail.com</a>
+</div>
+
+</footer>
+
+    </div>
+	
+	<script type="text/javascript" src="..\js\swiper.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+</html>
